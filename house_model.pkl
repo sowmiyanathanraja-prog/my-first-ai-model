@@ -1,0 +1,15 @@
+import joblib
+from sklearn.linear_model import LinearRegression
+
+# 1. Simple training data: [Number of rooms]
+X = [[1], [2], [3], [4]]
+# 2. Target data: [Price of the house in thousands]
+y = [100, 150, 200, 250]
+
+# 3. Train the model
+model = LinearRegression()
+model.fit(X, y)
+
+# 4. Save the trained model to a file
+joblib.dump(model, "house_model.pkl")
+print("Model trained and saved successfully!")
